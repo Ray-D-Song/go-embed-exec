@@ -38,4 +38,12 @@ func main() {
 		return
 	}
 	fmt.Println(string(output))
+
+	cmd = exec.Command(tmpFile.Name(), "./js/hey.mjs")
+	output, err = cmd.CombinedOutput()
+	if err != nil {
+		fmt.Println("Error executing file:", err)
+		return
+	}
+	fmt.Println(string(output))
 }
